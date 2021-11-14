@@ -1,9 +1,9 @@
-package com.skyd.imomoe.bean
+package com.skyd.imomoe.bean.danmaku
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-class SendDanmuBean(
+class AnimeSendDanmakuBean(
     @SerializedName("author")
     var author: String,
     @SerializedName("color")
@@ -20,4 +20,4 @@ class SendDanmuBean(
     var time: Double,
     @SerializedName("type")
     var type: String
-) : Serializable
+) : SendDanmakuBean

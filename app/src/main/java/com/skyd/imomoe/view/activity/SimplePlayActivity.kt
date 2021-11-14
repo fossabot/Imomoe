@@ -6,6 +6,8 @@ import androidx.lifecycle.lifecycleScope
 import com.shuyu.gsyvideoplayer.GSYVideoManager
 import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack
 import com.shuyu.gsyvideoplayer.model.VideoOptionModel
+import com.shuyu.gsyvideoplayer.player.PlayerFactory
+import com.shuyu.gsyvideoplayer.utils.GSYVideoType
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils
 import com.skyd.imomoe.database.getAppDataBase
 import com.skyd.imomoe.databinding.ActivitySimplePlayBinding
@@ -14,6 +16,7 @@ import com.skyd.imomoe.util.Util.setFullScreen
 import com.skyd.imomoe.util.gone
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import tv.danmaku.ijk.media.exo2.Exo2PlayerManager
 import tv.danmaku.ijk.media.player.IjkMediaPlayer
 import java.io.File
 
@@ -34,6 +37,8 @@ class SimplePlayActivity : BaseActivity<ActivitySimplePlayBinding>() {
         init()
 
         mBinding.run {
+            PlayerFactory.setPlayManager(Exo2PlayerManager().javaClass)
+            GSYVideoType.disableMediaCodec()        // 关闭硬解码
             avpSimplePlayActivity.startPlayLogic()
             orientationUtils.resolveByClick()
             avpSimplePlayActivity.startWindowFullscreen(

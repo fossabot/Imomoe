@@ -1,4 +1,4 @@
-package com.cyeasybuy.skin_sweat_soybean
+package com.skyd.skin_sweat_soybean
 
 import org.junit.Test
 

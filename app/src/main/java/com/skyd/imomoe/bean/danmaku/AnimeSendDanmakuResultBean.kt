@@ -1,8 +1,9 @@
-package com.skyd.imomoe.bean
+package com.skyd.imomoe.bean.danmaku
 
 import com.google.gson.annotations.SerializedName
+import com.skyd.imomoe.bean.BaseBean
 
-class SendDanmuResultBean(
+class AnimeSendDanmakuResultBean(
     override var type: String,
     override var actionUrl: String,
     @SerializedName("code")

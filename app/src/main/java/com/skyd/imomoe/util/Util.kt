@@ -1,5 +1,6 @@
 package com.skyd.imomoe.util
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.*
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
@@ -613,20 +614,17 @@ object Util {
                 decodeUrl.startsWith(Const.ActionUrl.ANIME_SKIP_BY_WEBSITE) -> { // 根据网址跳转
                     var website = decodeUrl.replaceFirst(Const.ActionUrl.ANIME_SKIP_BY_WEBSITE, "")
                     if (website.isBlank() || website == "/") {
-                        MaterialDialog(activity).show {
-                            input(hintRes = R.string.input_a_website) { dialog, text ->
-                                try {
-                                    var url = text.toString()
-                                    if (!url.matches(Regex("^.+://.*"))) url = "http://$url"
-                                    process(activity, URL(url).file)
-                                } catch (e: Exception) {
-                                    App.context.resources.getString(R.string.website_format_error)
-                                        .showToast()
-                                    e.printStackTrace()
-                                }
+                        MaterialDialog(activity).input(hintRes = R.string.input_a_website) { dialog, text ->
+                            try {
+                                var url = text.toString()
+                                if (!url.matches(Regex("^.+://.*"))) url = "http://$url"
+                                process(activity, URL(url).file)
+                            } catch (e: Exception) {
+                                App.context.resources.getString(R.string.website_format_error)
+                                    .showToast()
+                                e.printStackTrace()
                             }
-                            positiveButton(R.string.ok)
-                        }
+                        }.positiveButton(R.string.ok).show()
                     } else {
                         try {
                             if (!website.matches(Regex("^.+://.*"))) website = "http://$website"

@@ -98,7 +98,7 @@ open class AnimeVideoPlayer : StandardGSYVideoPlayer {
     private var mEpisodeAdapter: EpisodeRecyclerViewAdapter? = null
 
     // 设置
-    private var mSettingContainer: ViewGroup? = null
+    protected var mSettingContainer: ViewGroup? = null
     private var mSettingImageView: ImageView? = null
 
     // 镜像RadioGroup
@@ -121,7 +121,7 @@ open class AnimeVideoPlayer : StandardGSYVideoPlayer {
     private var mMediaCodecCheckBox: CheckBox? = null
 
     // 右侧弹出栏
-    private var mRightContainer: ViewGroup? = null
+    protected var mRightContainer: ViewGroup? = null
 
     // 按住高速播放的tv
     private var mTouchDownHighSpeedTextView: TextView? = null
@@ -482,6 +482,18 @@ open class AnimeVideoPlayer : StandardGSYVideoPlayer {
         mLongPressing = false
     }
 
+    override fun setSpeed(speed: Float, soundTouch: Boolean) {
+        super.setSpeed(speed, soundTouch)
+        onSpeedChanged(speed)
+    }
+
+    /**
+     * 视频播放速度改变后回调
+     */
+    protected open fun onSpeedChanged(speed: Float) {
+
+    }
+
     /**
      * 需要在尺寸发生变化的时候重新处理
      */
@@ -677,6 +689,11 @@ open class AnimeVideoPlayer : StandardGSYVideoPlayer {
 
     public override fun clickStartIcon() {
         super.clickStartIcon()
+
+        // 下面是处理完点击后的逻辑
+        if (mCurrentState == CURRENT_STATE_PLAYING) {
+            onVideoResume()
+        }
     }
 
     override fun onClick(v: View) {

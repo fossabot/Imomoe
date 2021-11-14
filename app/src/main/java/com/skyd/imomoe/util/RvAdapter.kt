@@ -9,7 +9,7 @@ import com.skyd.imomoe.bean.GetDataEnum
  * @param deltaDataSet 新数据集
  * @param dataSet 构造adapter时传入的list
  */
-fun <T> RecyclerView.Adapter<RecyclerView.ViewHolder>.smartNotifyDataSetChanged(
+fun <T, VH : RecyclerView.ViewHolder> RecyclerView.Adapter<VH>.smartNotifyDataSetChanged(
     type: GetDataEnum,
     deltaDataSet: MutableList<T>,
     dataSet: MutableList<T>

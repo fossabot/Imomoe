@@ -1,4 +1,4 @@
-package com.cyeasybuy.skin_sweat_soybean
+package com.skyd.skin_lemon
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.cyeasybuy.skin_sweat_soybean.test", appContext.packageName)
+        assertEquals("com.cyeasybuy.skin_lemon.test", appContext.packageName)
     }
 }

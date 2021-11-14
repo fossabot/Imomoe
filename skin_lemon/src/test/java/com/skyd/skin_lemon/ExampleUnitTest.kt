@@ -1,4 +1,4 @@
-package com.cyeasybuy.skin_dark
+package com.skyd.skin_lemon
 
 import org.junit.Test
 

@@ -19,7 +19,7 @@
             android:gravity="center" />
     </FrameLayout>
 
-    <master.flame.danmaku.ui.widget.DanmakuView
+    <com.kuaishou.akdanmaku.ui.DanmakuView
         android:id="@+id/danmaku_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -127,7 +127,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="5dp"
             android:background="@drawable/shape_fill_circle_corner_danmu_6"
-            android:hint="@string/send_a_danmu"
+            android:hint="@string/send_a_danmaku"
             android:imeOptions="actionSend"
             android:paddingHorizontal="10dp"
             android:singleLine="true"
@@ -318,17 +318,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.skyd.imomoe.view.component.textview.TypefaceTextView
+        <TextClock
             android:id="@+id/tv_system_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="16dp"
+            android:format24Hour="HH:mm"
             android:textColor="@color/foreground_white_skin"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/iv_setting"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="17:00" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -369,8 +369,7 @@
         android:layout_alignParentEnd="true"
         android:background="@color/gray_2"
         android:clickable="true"
-        android:focusable="true"
-        tools:visibility="gone">
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -452,6 +451,17 @@
                 android:gravity="center"
                 android:paddingVertical="9dp"
                 android:text="@string/open_by_external_player"
+                android:textColor="@color/foreground_white_skin" />
+
+            <TextView
+                android:id="@+id/tv_input_custom_danmaku_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/shape_circle_corner_edge_white_ripper_5_skin"
+                android:gravity="center"
+                android:paddingVertical="9dp"
+                android:text="@string/input_custom_danmaku_url"
                 android:textColor="@color/foreground_white_skin" />
 
             <!--            <CheckBox-->

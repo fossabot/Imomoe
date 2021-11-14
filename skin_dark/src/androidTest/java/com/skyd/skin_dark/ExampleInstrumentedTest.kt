@@ -1,4 +1,4 @@
-package com.cyeasybuy.skin_dark
+package com.skyd.skin_dark
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
