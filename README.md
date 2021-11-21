@@ -27,6 +27,9 @@
 
 ----
 
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSkyD666%2FImomoe.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FSkyD666%2FImomoe?ref=badge_large)
+
 ## [>>必看安全说明<<](#安全说明)
 
 ## [>>关于http网站或数据源的安全问题<<](doc/about_http_security.md)
@@ -51,6 +54,7 @@
 ## 运行截图
 
 ![main](screenshot/main.jpg) ![anime_detail](screenshot/anime_detail.jpg)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSkyD666%2FImomoe.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FSkyD666%2FImomoe?ref=badge_shield)
 
 ![new_anime](screenshot/new_anime.jpg) ![everyday_anime](screenshot/everyday_anime.jpg) 
 
@@ -119,4 +123,3 @@
 使用此软件代码需**遵循以下许可证协议**
 
 [**GNU General Public License v3.0**](LICENSE)
-
